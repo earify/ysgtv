@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'CR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GMM';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 기본 리셋 및 전체 레이아웃 */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+/* 고정 해상도 1920x1080 */
+.container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin: auto;
+  background: black;
+}
+
+/* 오른쪽 사진 영역: 4:3 비율로 고정 (예: 1440x1080) */
+#photo-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1440px;
+  height: 1080px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 원본 비율 유지 */
+}
+
+/* 왼쪽 정보 패널: 480x1080 */
+#info-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 1080px;
+  background: rgb(28, 44, 54);
+  color: white;
+  font-family: 'GMM';
+  font-size: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* 현재 시간 */
+#current-time {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-family: 'CR';
+  font-weight: bold;
+}
+
+/* 날씨 및 급식 제목 */
+#hourly-forecast h3,
+#lunch-menu h3 {
+  font-size: 28px;
+  margin: 10px 0;
+  font-weight: 700;
+  font-family: 'CR';
+}
+
+/* 날씨 및 급식 항목 */
+#hourly-forecast p,
+#lunch-menu p {
+  margin: 5px 0;
+  font-size: 22px;
+  font-family: 'CR';
+}
+
+/* 전체화면 버튼 */
+#fullscreen-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+}
