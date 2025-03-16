@@ -84,6 +84,7 @@ app.get('/weather_data', async (req, res) => {
 
   // 현재 시간 이하의 가장 큰 valid_time 선택
   let base_time = valid_times[0];
+  // let base_time = '2000'; // 테스트 해봄
   for (const t of valid_times) {
     if (t <= current_time) {
       base_time = t;

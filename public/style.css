@@ -29,6 +29,24 @@ body, html {
   height: 1080px;
   margin: auto;
   background: black;
+  display: flex;
+}
+
+/* 왼쪽 정보 패널: 480px 고정 */
+#info-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 100%;
+  background: rgb(28, 44, 54);
+  color: white;
+  font-family: 'GMM';
+  font-size: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 10; /* 정보 패널을 우선적으로 보이게 */
 }
 
 /* 오른쪽 사진 영역: 4:3 비율로 고정 (예: 1440x1080) */
@@ -44,26 +62,11 @@ body, html {
   align-items: center;
 }
 
+/* 사진 */
 #photo-container img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain; /* 원본 비율 유지 */
-}
-
-/* 왼쪽 정보 패널: 480x1080 */
-#info-panel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 480px;
-  height: 1080px;
-  background: rgb(28, 44, 54);
-  color: white;
-  font-family: 'GMM';
-  font-size: 24px;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow-y: auto;
 }
 
 /* 현재 시간 */
@@ -103,5 +106,5 @@ body, html {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1000; /* 버튼이 다른 요소들 위에 보이도록 설정 */
 }
